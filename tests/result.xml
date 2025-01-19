@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="13.628" timestamp="2025-01-16T22:33:00.337265+05:30" hostname="Beshra"><testcase classname="test_e2e.TestOne" name="test_e2e2" time="7.891"><failure message="AssertionError: assert 'Success! Thank yo u!' in '×\nSuccess! Thank you! Your order will be delivered in next few weeks :-).'">self = &lt;tests.test_e2e.TestOne object at 0x0000017CAE0F7560&gt;
+
+    def test_e2e2(self):
+        home =  HomePage(self.driver)
+        self.driver.get("https://rahulshettyacademy.com/angularpractice")
+        CheckOutPage = home.shopeItems()
+        addall = CheckOutPage.getCardTitles()
+        for add in addall:
+            add.click()
+        CheckOutPage.getcardFooter().click()
+        confirmCheckout = CheckOutPage.getcardCheckout()
+        confirmCheckout.getCountry().send_keys("Ind")
+        self.verifyLinkPresence("India")
+        self.driver.find_element(By.LINK_TEXT, "India").click()
+    
+        self.driver.find_element(By.XPATH, "//div[@class='checkbox checkbox-primary']").click()
+        self.driver.find_element(By.CSS_SELECTOR, "input[type='submit']").click()
+        successtext = self.driver.find_element(By.CSS_SELECTOR, ".alert-success").text
+    
+&gt;       assert "Success! Thank yo u!" in successtext
+E       AssertionError: assert 'Success! Thank yo u!' in '×\nSuccess! Thank you! Your order will be delivered in next few weeks :-).'
+
+test_e2e.py:33: AssertionError</failure></testcase><testcase time="1.102" /></testsuite></testsuites>
