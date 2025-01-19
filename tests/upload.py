@@ -16,6 +16,9 @@ driver.get("https://rahulshettyacademy.com/upload-download-test/index.html")
 driver.get("https://rahulshettyacademy.com/upload-download-test/index.html")
 driver.get("https://rahulshettyacademy.com/upload-download-test/index.html")
 driver.find_element(By.ID,"downloadButton").click()
+driver.find_element(By.ID,"downloadButton").click()
+///test
+///test33
 time.sleep(4)
 file_input = driver.find_element(By.CSS_SELECTOR,"input[type='file']")
 file_input.send_keys(file_path)
