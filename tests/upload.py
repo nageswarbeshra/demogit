@@ -9,7 +9,10 @@ file_path = "C:/Users/nages/Downloads/download.xlsx"
 fruit_name = "Apple"
 service_obj = Service("C:/Users/nages/PycharmProjects/pythonSelenium/Resources/chromedriver.exe")
 driver = webdriver.Chrome(service=service_obj)
-
+print("change 1")
+print("change 2")
+print("change 3")
+print("change 4")
 driver.implicitly_wait(5)
 driver.get("https://rahulshettyacademy.com/upload-download-test/index.html")
 driver.find_element(By.ID,"downloadButton").click()
